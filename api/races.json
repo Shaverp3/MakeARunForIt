@@ -1,142 +1,158 @@
 {
-    "users": [
-        { 
-          "id": 1,
-          "name": "Pat Shaver",
-          "email": "pat.shaver@icloud.com",
-          "password": "abc123"
-        },
-        { 
-          "id": 2,
-          "name": "Charlotte Shaver",
-          "email": "psh.shaver@email.com",
-          "password": "abc123"
-        }
-        
-    ],
-
-    "types": [
-        { 
-          "id": 1,
-          "name": "5k",
-          "distance": 5,
-          "measurement": "kilometers"
-        },
-        { 
-          "id": 2,
-          "name": "10k",
-          "distance": 10,
-          "measurement": "kilometers"
-        },
-        { 
-          "id": 3,
-          "name": "Half-marathon",
-          "distance": 13.1,
-          "measurement": "miles"
-        },
-        { 
-          "id": 4,
-          "name": "Marathon",
-          "distance": 26.2,
-          "measurement": "miles"
-        },
-        { 
-          "id": 5,
-          "name": "2-Miler",
-          "distance": 2,
-          "measurement": "miles"
-        },
-        { 
-          "id": 6,
-          "name": "15-Miler",
-          "distance": 15,
-          "measurement": "miles"
-        },
-        { 
-          "id": 7,
-          "name": "10-Miler",
-          "distance": 10,
-          "measurement": "miles"
-        },
-        { 
-          "id": 8,
-          "name": "7k",
-          "distance": 7,
-          "measurement": "kilometers"
-        },
-        { 
-          "id": 9,
-          "name": "8k",
-          "distance": 8,
-          "measurement": "kilometers"
-        }
-    ],
-
-    "races": [
-        {
-          "id": 1,
-          "name":"Pumpkin Run 5K",
-          "date":"09/17/2016",
-          "location":"Milton, WV",
-          "temperature":"72",
-          "gunTime":"38:27.1",
-          "netTime":"38:15.0",
-          "pace":"12:23",
-          "overallPlace":"87/187",
-          "genderPlace":"39/115",
-          "ageGroupPlace":"5/9"
-        },
-        { 
-          "id": 2,
-          "name":"Hot Diggity Dog Thanksgiving 5K",
-          "date":"11/24/2016",
-          "location":"St. Albans, WV",
-          "temperature":"49",
-          "gunTime":"34:25.3",
-          "netTime":"34:06.7",
-          "pace":"11:05",
-          "overallPlace":"197/375",
-          "genderPlace":"97/226",
-          "ageGroupPlace":"5/13"
-        },
-        { 
-          "id": 3,
-          "name":"Jingle Bell Run",
-          "date":"12/17/2016",
-          "location":"Charleston, WV",
-          "temperature":"53",
-          "gunTime":"34:45.0",
-          "netTime":"34:38.4",
-          "pace":"11:09",
-          "overallPlace":"75/149",
-          "genderPlace":"39/91",
-          "ageGroupPlace":"6/14"
-        },
-        { 
-          "id": 4,
-          "name":"Race Into the New Year Prediction 5K",
-          "date":"1/1/2017",
-          "location":"St. Albans, WV",
-          "temperature":"46",
-          "gunTime":"32:37.7",
-          "netTime":"32:33.4",
-          "pace":"10:25",
-          "overallPlace":"120/250",
-          "genderPlace":"61/153",
-          "ageGroupPlace":"10/20"
-        },
-        {
-          "id": 5,
-          "name":"Dachshund Through the Snow 5K",
-          "date":"1/29/2017",
-          "location":"Charleston, WV",
-          "temperature":"36",
-          "gunTime":"32:19.4",
-          "netTime":"32:03.7",
-          "pace":"10:25",
-          "overallPlace":"129/248",
-          "genderPlace":"62/153",
-          "ageGroupPlace":"1/8"
-        }   
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Pat Shaver",
+      "email": "pat.shaver@icloud.com",
+      "password": "abc123"
+    },
+    {
+      "id": 2,
+      "name": "Charlotte Shaver",
+      "email": "psh.shaver@email.com",
+      "password": "abc123"
+    }
+  ],
+  "distances": [
+    {
+      "id": 1,
+      "name": "5k",
+      "distance": 5,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 2,
+      "name": "10k",
+      "distance": 10,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 3,
+      "name": "Half-marathon",
+      "distance": 13.1,
+      "measurement": "miles"
+    },
+    {
+      "id": 4,
+      "name": "Marathon",
+      "distance": 26.2,
+      "measurement": "miles"
+    },
+    {
+      "id": 5,
+      "name": "2-Miler",
+      "distance": 2,
+      "measurement": "miles"
+    },
+    {
+      "id": 6,
+      "name": "15-Miler",
+      "distance": 15,
+      "measurement": "miles"
+    },
+    {
+      "id": 7,
+      "name": "10-Miler",
+      "distance": 10,
+      "measurement": "miles"
+    },
+    {
+      "id": 8,
+      "name": "7k",
+      "distance": 7,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 9,
+      "name": "8k",
+      "distance": 8,
+      "measurement": "kilometers"
+    }
+  ],
+  "races": [
+    {
+      "id": 1,
+      "name": "Pumpkin Run 5K",
+      "distanceId": 1,
+      "date": "09/17/2016",
+      "location": "Milton, WV",
+      "temperature": "72",
+      "gunTime": "38:27.1",
+      "netTime": "38:15.0",
+      "pace": "12:23",
+      "overallPlace": "87/187",
+      "genderPlace": "39/115",
+      "ageGroupPlace": "5/9"
+    },
+    {
+      "id": 2,
+      "name": "Hot Diggity Dog Thanksgiving 5K",
+      "distanceId": 1,
+      "date": "11/24/2016",
+      "location": "St. Albans, WV",
+      "temperature": "49",
+      "gunTime": "34:25.3",
+      "netTime": "34:06.7",
+      "pace": "11:05",
+      "overallPlace": "197/375",
+      "genderPlace": "97/226",
+      "ageGroupPlace": "5/13"
+    },
+    {
+      "id": 3,
+      "name": "Jingle Bell Run",
+      "distanceId": 1,
+      "date": "12/17/2016",
+      "location": "Charleston, WV",
+      "temperature": "53",
+      "gunTime": "34:45.0",
+      "netTime": "34:38.4",
+      "pace": "11:09",
+      "overallPlace": "75/149",
+      "genderPlace": "39/91",
+      "ageGroupPlace": "6/14"
+    },
+    {
+      "id": 4,
+      "name": "Race Into the New Year Prediction 5K",
+      "distanceId": 1,
+      "date": "1/1/2017",
+      "location": "St. Albans, WV",
+      "temperature": "46",
+      "gunTime": "32:37.7",
+      "netTime": "32:33.4",
+      "pace": "10:25",
+      "overallPlace": "120/250",
+      "genderPlace": "61/153",
+      "ageGroupPlace": "10/20"
+    },
+    {
+      "id": 5,
+      "name": "Dachshund Through the Snow 5K",
+      "distanceId": 1,
+      "date": "1/29/2017",
+      "location": "Charleston, WV",
+      "temperature": "36",
+      "gunTime": "32:19.4",
+      "netTime": "32:03.7",
+      "pace": "10:25",
+      "overallPlace": "129/248",
+      "genderPlace": "62/153",
+      "ageGroupPlace": "1/8"
+    },
+    {
+      "name": "Sweetheart 5K",
+      "distanceId": null,
+      "date": "02/26/2017",
+      "location": "Nitro, WV",
+      "temperature": "",
+      "gunTime": "30:45.7",
+      "netTime": "30:33.6",
+      "pace": "",
+      "overallPlace": "106/251",
+      "genderPlace": "49/153",
+      "ageGroupPlace": "",
+      "id": 6
+    }
+  ]
 }
