@@ -12,18 +12,18 @@ class NavBar extends Component {
         return (
             <>
                     <Navbar style={{backgroundColor: '#209dc9'}}>
-                    <Navbar.Brand style={{color: '#f3532b'}}  href="#home">Make A Run For It!</Navbar.Brand>
+                    <Navbar.Brand style={{color: '#f3532b', fontSize:'30px', fontWeight: 'bold', textShadow: '2px 2px 5px black'}}  href="#home">Make A Run For It!</Navbar.Brand>
                     <Nav className="justify-content-end" activeKey="/home">
                         <Nav.Item style={{color: '#ebebeb'}}>
-                        <Nav.Link ><Link className="nav-link" to="/">Home</Link>
+                        <Nav.Link ><Link style={{color:'#ebebeb'}} className="nav-link" to="/">Home</Link>
                         </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                        <Nav.Link><Link className="nav-link" to="/races">Races</Link>
+                        <Nav.Link><Link style={{color:'#ebebeb'}} className="nav-link" to="/races">Races</Link>
                         </Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                        <Nav.Link><Link className="nav-link" to="/">Reports</Link>
+                        <Nav.Link><Link style={{color:'#ebebeb'}} className="nav-link" to="/">Reports</Link>
                         </Nav.Link>
                         </Nav.Item>
                     </Nav>

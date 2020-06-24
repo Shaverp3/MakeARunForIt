@@ -82,7 +82,8 @@
       "pace": "12:23",
       "overallPlace": "87/187",
       "genderPlace": "39/115",
-      "ageGroupPlace": "5/9"
+      "ageGenderPlace": "5/9",
+      "journalEntry": "First race"
     },
     {
       "id": 2,
@@ -96,7 +97,8 @@
       "pace": "11:05",
       "overallPlace": "197/375",
       "genderPlace": "97/226",
-      "ageGroupPlace": "5/13"
+      "ageGenderPlace": "5/13",
+      "journalEntry": ""
     },
     {
       "id": 3,
@@ -110,7 +112,8 @@
       "pace": "11:09",
       "overallPlace": "75/149",
       "genderPlace": "39/91",
-      "ageGroupPlace": "6/14"
+      "ageGenderPlace": "6/14",
+      "journalEntry": ""
     },
     {
       "id": 4,
@@ -124,7 +127,8 @@
       "pace": "10:25",
       "overallPlace": "120/250",
       "genderPlace": "61/153",
-      "ageGroupPlace": "10/20"
+      "ageGenderPlace": "10/20",
+      "journalEntry": ""
     },
     {
       "id": 5,
@@ -138,11 +142,12 @@
       "pace": "10:25",
       "overallPlace": "129/248",
       "genderPlace": "62/153",
-      "ageGroupPlace": "1/8"
+      "ageGenderPlace": "1/8",
+      "journalEntry": ""
     },
     {
       "name": "Sweetheart 5K",
-      "distanceId": null,
+      "distanceId": 1,
       "date": "02/26/2017",
       "location": "Nitro, WV",
       "temperature": "",
@@ -151,8 +156,54 @@
       "pace": "",
       "overallPlace": "106/251",
       "genderPlace": "49/153",
-      "ageGroupPlace": "",
-      "id": 6
+      "ageGenderPlace": "",
+      "id": 6,
+      "journalEntry": ""
+    },
+    {
+      "name": "Race For The Cure",
+      "distanceId": null,
+      "date": "05/06/2017",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "30:01.9",
+      "netTime": "29:56.8",
+      "pace": "9:40",
+      "overallPlace": "71/162",
+      "genderPlace": "21/84",
+      "ageGenderPlace": "",
+      "id": 7,
+      "journalEntry": ""
+    },
+    {
+      "name": "Almost Heaven Trail Run",
+      "distanceId": "8",
+      "date": "",
+      "location": "",
+      "temperature": "",
+      "gunTime": "",
+      "netTime": "",
+      "pace": "",
+      "overallPlace": "",
+      "genderPlace": "",
+      "ageGenderPlace": "",
+      "journalEntry": "",
+      "id": 8
+    },
+    {
+      "name": "Almost Heaven Trail Run",
+      "distanceId": "8",
+      "date": "07/22/2017",
+      "location": "St. Albans, WV",
+      "temperature": "90",
+      "gunTime": "1:01.58",
+      "netTime": "1:01.58",
+      "pace": "14:15",
+      "overallPlace": "78/165",
+      "genderPlace": "33/98",
+      "ageGenderPlace": "3/16",
+      "journalEntry": "Hot and Humid - Trail very narrow - tripped a bunch of times but did not fall.",
+      "id": 9
     }
   ]
 }

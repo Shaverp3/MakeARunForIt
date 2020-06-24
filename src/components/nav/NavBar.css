@@ -1,6 +1,6 @@
 
 #bootstrap-override-navbar {
-    background-color: #209dc9;
+    background-color: #0f6b8d;
 }
 
 .Nav-link {
@@ -51,5 +51,5 @@ small {
   }
 
   .justify-content-end{
-      margin-left: 55vw;
+      margin-left: 45vw;
   }

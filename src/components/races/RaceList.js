@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 //import AnimalCard from './AnimalCard'
 import RaceManager from '../../modules/RaceManager'
 import ResourceCard from "../reusables/ResourceCard"
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
 
 class RaceList extends Component {
     //define what this component needs to render
@@ -35,8 +37,8 @@ class RaceList extends Component {
                         Add Race
                     </button>
                 </section>
-                
-                <div className="container-cards">
+
+                {/* <div className="container-cards">
                     {this.state.racesInState.map(currentRaceInLoop => {
                         return <ResourceCard
                         key={currentRaceInLoop.id}
@@ -45,7 +47,31 @@ class RaceList extends Component {
                         //deleteAnimal={this.deleteAnimal}
                     />
                 })}
-                </div>
+                </div> */}
+                
+
+                <Accordion defaultActiveKey="0">
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                        {this.state.racesInState.map(currentRaceInLoop => {
+                        return <ResourceCard
+                        key={currentRaceInLoop.id}
+                        resource={currentRaceInLoop.name}
+                        resourceName="races"</Accordion.Toggle>
+                        
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>Hello! I'm the body</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="1">
+                            Click me!
+                    </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="1">
+                            <Card.Body>Hello! I'm another body</Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
             </>
         )
     }

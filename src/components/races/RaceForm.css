@@ -1,4 +1,4 @@
-fieldset {
+Form {
     max-width: 40em;
     padding: 4px;
     margin: 2em auto;
@@ -22,7 +22,7 @@ fieldset button {
     margin: .3em auto;
     background-color: #f3532b;
     border: none;
-    color: cornsilk;
+    color: rgb(220, 245, 255);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -55,6 +55,6 @@ fieldset input, fieldset button {
     margin: 0
 }
 
-fieldset .alignRight {
+.alignRight {
     text-align: right;
 }
