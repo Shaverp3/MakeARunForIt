@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 //import the components we will need
 //import AnimalCard from './AnimalCard'
 import RaceManager from '../../modules/RaceManager'
-import ResourceCard from "../reusables/ResourceCard"
+//import ResourceCard from "../reusables/ResourceCard"
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
-
+import Button from 'react-bootstrap/Button'
 class RaceList extends Component {
     //define what this component needs to render
     state = {
@@ -31,50 +31,34 @@ class RaceList extends Component {
             //add this button above your display of animal cards
             <>
                 <section className="section-content">
-                    <button type="button"
-                        className="btn"
+                    <Button variant="primary"
+                        style={{ backgroundColor: '#f3532b', color: '#0f6b8d' }}
+                        type="submit"
+                        disabled={this.state.loadingStatus}
                         onClick={() => { this.props.history.push("/races/new") }}>
                         Add Race
-                    </button>
+                    </Button>
                 </section>
-
-                {/* <div className="container-cards">
+                <Accordion>
                     {this.state.racesInState.map(currentRaceInLoop => {
-                        return <ResourceCard
-                        key={currentRaceInLoop.id}
-                        resource={currentRaceInLoop}
-                        resourceName="races"
-                        //deleteAnimal={this.deleteAnimal}
-                    />
-                })}
-                </div> */}
-                
+                        return (<Card style={{ backgroundColor: '#0593b3' }}>
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                                {currentRaceInLoop.date}  {currentRaceInLoop.name}  {currentRaceInLoop.location}
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                                <Card.Body> Temp at race time: {currentRaceInLoop.temperature}  | Gun Time:{currentRaceInLoop.gunTime}  | Net Time: {currentRaceInLoop.netTime}  | Pace: {currentRaceInLoop.pace}  | Overall Place: {currentRaceInLoop.overallPlace}  | Gender Place: {currentRaceInLoop.genderPlace}  | Division Place: {currentRaceInLoop.ageGenderPlace}
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>)
+                    }
 
-                <Accordion defaultActiveKey="0">
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                        {this.state.racesInState.map(currentRaceInLoop => {
-                        return <ResourceCard
-                        key={currentRaceInLoop.id}
-                        resource={currentRaceInLoop.name}
-                        resourceName="races"</Accordion.Toggle>
-                        
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>Hello! I'm the body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="1">
-                            Click me!
-                    </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="1">
-                            <Card.Body>Hello! I'm another body</Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
+                    )}
                 </Accordion>
             </>
+
         )
     }
 }
+
 
 export default RaceList
