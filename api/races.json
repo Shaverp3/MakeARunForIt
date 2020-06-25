@@ -162,7 +162,7 @@
     },
     {
       "name": "Race For The Cure",
-      "distanceId": null,
+      "distanceId": 1,
       "date": "05/06/2017",
       "location": "Charleston, WV",
       "temperature": "",
@@ -175,10 +175,9 @@
       "id": 7,
       "journalEntry": ""
     },
-    
     {
       "name": "Almost Heaven Trail Run",
-      "distanceId": "8",
+      "distanceId": 8,
       "date": "07/22/2017",
       "location": "St. Albans, WV",
       "temperature": "90",

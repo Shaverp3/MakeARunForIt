@@ -1,2 +1,9 @@
-{
-    backgroundColor: '#0593b3
+div.card-header {
+    color: '#0593b3;
+}
+
+button.alignRight.btn.btn-primary {
+    background-color: #f3532b;
+         color: #0f6b8d;
+    text-align: right;
+}
