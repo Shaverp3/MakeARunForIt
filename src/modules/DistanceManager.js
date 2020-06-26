@@ -44,6 +44,11 @@ const DistanceManager = {
         },
         body: JSON.stringify({name: `${editedDistance.name}`})
       }).then(data => data.json());
+},
+
+  getWithRaces(id) {
+    return fetch(`${remoteURL}/distances/${id}?_embed=races`)
+      .then(result => result.json())
 }
 
 }

@@ -71,53 +71,9 @@
   ],
   "races": [
     {
-      "id": 1,
-      "name": "Pumpkin Run 5K",
-      "distanceId": 1,
-      "date": "09/17/2016",
-      "location": "Milton, WV",
-      "temperature": "72",
-      "gunTime": "38:27.1",
-      "netTime": "38:15.0",
-      "pace": "12:23",
-      "overallPlace": "87/187",
-      "genderPlace": "39/115",
-      "ageGenderPlace": "5/9",
-      "journalEntry": "First race"
-    },
-    {
-      "id": 2,
-      "name": "Hot Diggity Dog Thanksgiving 5K",
-      "distanceId": 1,
-      "date": "11/24/2016",
-      "location": "St. Albans, WV",
-      "temperature": "49",
-      "gunTime": "34:25.3",
-      "netTime": "34:06.7",
-      "pace": "11:05",
-      "overallPlace": "197/375",
-      "genderPlace": "97/226",
-      "ageGenderPlace": "5/13",
-      "journalEntry": ""
-    },
-    {
-      "id": 3,
-      "name": "Jingle Bell Run",
-      "distanceId": 1,
-      "date": "12/17/2016",
-      "location": "Charleston, WV",
-      "temperature": "53",
-      "gunTime": "34:45.0",
-      "netTime": "34:38.4",
-      "pace": "11:09",
-      "overallPlace": "75/149",
-      "genderPlace": "39/91",
-      "ageGenderPlace": "6/14",
-      "journalEntry": ""
-    },
-    {
       "id": 4,
       "name": "Race Into the New Year Prediction 5K",
+      "userId": 1,
       "distanceId": 1,
       "date": "1/1/2017",
       "location": "St. Albans, WV",
@@ -128,12 +84,13 @@
       "overallPlace": "120/250",
       "genderPlace": "61/153",
       "ageGenderPlace": "10/20",
-      "journalEntry": ""
+      "journalEntry": "This race was run without running watch."
     },
     {
       "id": 5,
       "name": "Dachshund Through the Snow 5K",
       "distanceId": 1,
+      "userId": 1,
       "date": "1/29/2017",
       "location": "Charleston, WV",
       "temperature": "36",
@@ -146,8 +103,9 @@
       "journalEntry": ""
     },
     {
+      "id": 6,
       "name": "Sweetheart 5K",
-      "distanceId": 1,
+      "userId": 1,
       "date": "02/26/2017",
       "location": "Nitro, WV",
       "temperature": "",
@@ -157,12 +115,12 @@
       "overallPlace": "106/251",
       "genderPlace": "49/153",
       "ageGenderPlace": "",
-      "id": 6,
-      "journalEntry": ""
+      "journalEntry": "Very Cold"
     },
     {
       "name": "Race For The Cure",
       "distanceId": 1,
+      "userId": 1,
       "date": "05/06/2017",
       "location": "Charleston, WV",
       "temperature": "",
@@ -178,6 +136,7 @@
     {
       "name": "Almost Heaven Trail Run",
       "distanceId": 8,
+      "userId": 1,
       "date": "07/22/2017",
       "location": "St. Albans, WV",
       "temperature": "90",
@@ -189,6 +148,22 @@
       "ageGenderPlace": "3/16",
       "journalEntry": "Hot and Humid - Trail very narrow - tripped a bunch of times but did not fall.",
       "id": 9
+    },
+    {
+      "id": 10,
+      "name": "Jingle Bell Run",
+      "userId": 1,
+      "distanceId": 1,
+      "date": "12/17/2016",
+      "location": "Charleston, WV",
+      "temperature": "32",
+      "gunTime": "34:45.0",
+      "netTime": "34:38.4",
+      "pace": "11:05",
+      "overallPlace": "75/149",
+      "genderPlace": "39/91",
+      "ageGenderPlace": "6/14",
+      "journalEntry": "The distance was more than a quarter mile too long."
     }
   ]
 }

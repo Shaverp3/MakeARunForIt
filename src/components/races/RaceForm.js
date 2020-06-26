@@ -10,6 +10,7 @@ class RaceForm extends Component {
     state = {
         raceName: "",
         distanceId: {},
+        userId: 1,
         raceDate: "",
         raceLocation: "",
         raceTemperature: "",
@@ -40,7 +41,8 @@ class RaceForm extends Component {
             this.setState({ loadingStatus: true });
             const newRace = {
                 name: this.state.raceName,
-                distanceId: this.state.distanceId,
+                distanceId: parseInt(this.state.distanceId),
+                userId: 1,
                 date: this.state.raceDate,
                 location: this.state.raceLocation,
                 temperature: this.state.raceTemperature,
@@ -76,7 +78,7 @@ class RaceForm extends Component {
 
         return (
             <>
-                <Form>
+                <Form> 
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridRaceName">
                             <Form.Label> Name:</Form.Label>

@@ -44,6 +44,11 @@ const RaceManager = {
         },
         body: JSON.stringify({name: `${editedRace.name}`})
       }).then(data => data.json());
+  },
+
+  getWithDistance(id) {
+    return fetch(`${remoteURL}/races/${id}?_expand=distance`)
+      .then(result => result.json())
 }
 
 }
