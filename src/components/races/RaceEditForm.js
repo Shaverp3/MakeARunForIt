@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Container, Form } from 'react-bootstrap'
 import './RaceForm.css'
-import RaceManager from '../../modules/RaceManager'
+//import RaceManager from '../../modules/RaceManager'
 import DistanceManager from '../../modules/DistanceManager'
 
 class RaceEditForm extends Component {
@@ -61,21 +61,9 @@ class RaceEditForm extends Component {
     //Need to change this to new fetch method to get expanded distanceId associated with this race I am editing
     componentDidMount() {
         console.log("RACE LIST: ComponentDidMount");
-        //getDistanceId associated with current race that we're editing
-        // RaceManager.getWithDistance(this.props.race.id)
-        //     .then((distance) => {
-        //         console.log(distance)
-        //         this.setState({
-            //
-            //   this is where I need to get just one id and set it
-        //             distances: distance 
-        //         })
-        //     })
-    
-
-    DistanceManager.getAll()
+        DistanceManager.getAll()
             .then((distances) => {
-                console.log(distances)
+                console.log("this is the distances array", distances)
                 this.setState({
                     distances: distances
                 })
@@ -83,107 +71,82 @@ class RaceEditForm extends Component {
     }
 
 
-    
+
     // Inline edit Form that appears on the TaskList page; pay attention to value and onClick functionality
     render() {
 
         return (
             <>
                 <Container className="inline-edit-form"><br />
-                    <Form >
+                    <Form>
                         <Form.Group>
                             <Form.Label>Race Name: </Form.Label>
                             <Form.Control type="text" id="raceName" required
                                 onChange={this.handleFieldChange} value={this.state.raceName} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
+                            <Form.Label>Race Date: </Form.Label>
+                            <Form.Control
+                            type="text"
+                            id="raceDate"
+                            onChange={this.handleFieldChange} value={this.state.raceDate} onKeyDown ={this.handleKeyDown}/>
+
+                            <Form.Label> Location: </Form.Label>
+                            <Form.Control type="text" id="raceLocation" onChange={this.handleFieldChange}
+                            value={this.state.raceLocation} onKeyDown={this.handleKeyDown}/>
+
                             <Form.Label>Select Distance:</Form.Label>
                             <select
                                 size="sm"
                                 className="form-control"
                                 id="distanceId"
-                                value={this.state.distanceId}
+                                value={this.props.race.distance.id}
                                 onChange={this.handleFieldChange}
                             >
-                                {this.state.distances.map(distance =>
-                                    <option
-                                        key={distance.id}
-                                        value={distance.id}>{distance.name}
-                                    </option>
-                                )}
+                            {this.state.distances.map(distance => 
+                                 <option
+                                    key={distance.id}
+                                    value={distance.id}>{distance.name}
+                                 </option>)}
                             </select>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Date: </Form.Label>
-                            <Form.Control type="text" id="raceDate"
-                                onChange={this.handleFieldChange} value={this.state.raceDate} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Location: </Form.Label>
-                            <Form.Control type="text" id="raceLocation"
-                                onChange={this.handleFieldChange} value={this.state.raceLocation} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Temperature:</Form.Label>
-                            <Form.Control type="text" id="raceTemp"
-                                onChange={this.handleFieldChange} value={this.state.raceTemp} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Gun Time: </Form.Label>
-                            <Form.Control type="text" id="gunTime"
-                                onChange={this.handleFieldChange} value={this.state.gunTime} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Net Time: </Form.Label>
-                            <Form.Control type="text" id="netTime" onChange={this.handleFieldChange} value={this.state.netTime}
-                                onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Pace:</Form.Label>
-                            <Form.Control type="text" id="pace"
-                                onChange={this.handleFieldChange} value={this.state.pace} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Overall Place: </Form.Label>
-                            <Form.Control type="text" id="overallPlace"
-                                onChange={this.handleFieldChange} value={this.state.overallPlace} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Gender Place: </Form.Label>
-                            <Form.Control type="text" id="genderPlace"
-                                onChange={this.handleFieldChange} value={this.state.genderPlace} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Age/Gender Place: </Form.Label>
-                            <Form.Control type="text" id="ageGenderPlace"
-                                onChange={this.handleFieldChange} value={this.state.ageGenderPlace} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Notes: </Form.Label>
-                            <Form.Control type="text" id="raceJournalEntry"
-                                onChange={this.handleFieldChange} value={this.state.raceJournalEntry} onKeyDown={this.handleKeyDown} />
-                        </Form.Group>
-                        <div className="button-row">
-                            <Button className="cancel-btn"
-                                     variant="warning"
-                                     style={{ float: 'right', backgroundColor: '#0f6b8d', color: '#f3532b' }}
-                                     type="button"
-                                     size="sm"
-                                     onClick={() => this.props.editRace("")}>
-                                Cancel
+                            
+                            {/* <Form.Label>Temp: </Form.Label>
+                            <Form.Control type="text" id="raceTemp"                                onChange={this.handleFieldChange} value={this.state.raceTemp} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label>Gun Time:</Form.Label>
+                            <Form.Control type="text" id="gunTime" onChange={this.handleFieldChange} value={this.state.gunTime} onKeyDown={this.handleKeyDown} />
+                            | <Form.Lable>Net Time: </Form.Lable>
+                            <Form.Control type="text" id="netTime" onChange={this.handleFieldChange} value={this.state.netTime} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label>Pace: </Form.Label>
+                            <Form.Control type="text" id="Pace" onChange={this.handleFieldChange} value={this.state.pace} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label> Overall Place: </Form.Label>
+                            <Form.Control type="text" id="overallPlace" onChange={this.handleFieldChange} value={this.state.overallPlace} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label>Gender Place: </Form.Label>
+                            <Form.Control type="text" id="genderPlace" onChange={this.handleFieldChange} value={this.state.genderPlace} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label>Division Place: </Form.Label>
+                            <Form.Control type="text" id="ageGenderPlace" onChange={this.handleFieldChange} value={this.state.ageGenderPlace} onKeyDown={this.handleKeyDown} />
+                            | <Form.Label>Notes: </Form.Label>
+                            <Form.Control type="text" id="journalEntry" onChange={this.handleFieldChange} value={this.state.journalEntry} onKeyDown={this.handleKeyDown} />
+                           
+                            <div className="button-row">
+                                <Button className="cancel-btn"
+                                    variant="warning"
+                                    style={{ float: 'right', backgroundColor: '#0f6b8d', color: '#f3532b' }}
+                                    type="button"
+                                    size="sm"
+                                    onClick={() => this.props.editRace("")}>
+                                    Cancel
                             </Button>
-                            <Button className="submit-btn"
+                                <Button className="submit-btn"
                                     variant="success"
                                     style={{ float: 'right', backgroundColor: '#f3532b', color: '#0f6b8d', marginRight: '.5em' }}
                                     type="submit"
                                     size="sm"
                                     onClick={() => this.makeEditedRace()}>
-                                Save Changes
+                                    Save Changes
                             </Button>
-                        </div>
-
+                            </div> */}
+                            </Form.Group>
+                    
                     </Form>
-                </Container>
+            </Container>
             </>
         )
     }

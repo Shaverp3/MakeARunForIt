@@ -2,11 +2,13 @@ const remoteURL = "http://localhost:8088"
 
 const RaceManager = {
   get(id) {
-    return fetch(`${remoteURL}/races/${id}`).then(result => result.json())
+    return fetch(`${remoteURL}/races/${id}`)
+      .then(result => result.json())
   },
   getAll() {
     //refactor this fetch call to ask for animals that match the logged in users id
-    return fetch(`${remoteURL}/races`).then(result => result.json())
+    return fetch(`${remoteURL}/races?_expand=distance`)
+      .then(result => result.json())
   },
   delete(id) {
     return fetch(`${remoteURL}/races/${id}`, {
@@ -38,18 +40,18 @@ const RaceManager = {
 
   patch(editedRace) {
     return fetch(`${remoteURL}/animals/${editedRace.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({name: `${editedRace.name}`})
-      }).then(data => data.json());
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name: `${editedRace.name}` })
+    }).then(data => data.json());
   },
 
   getWithDistance(id) {
     return fetch(`${remoteURL}/races/${id}?_expand=distance`)
       .then(result => result.json())
-}
+  }
 
 }
 
