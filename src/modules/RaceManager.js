@@ -5,17 +5,25 @@ const RaceManager = {
     return fetch(`${remoteURL}/races/${id}`)
       .then(result => result.json())
   },
-  getAll() {
+
+  // getAll(userId) {
+  //   //refactor this fetch call to ask for animals that match the logged in users id
+  //   return fetch(`${remoteURL}/events?userId=${userId}`)
+  //   .then(result => result.json())
+  // }
+  getAll(userId) {
     //refactor this fetch call to ask for animals that match the logged in users id
-    return fetch(`${remoteURL}/races?_expand=distance`)
+   return fetch(`${remoteURL}/races?userId=${userId}&_expand=distance`)
       .then(result => result.json())
   },
+
   delete(id) {
     return fetch(`${remoteURL}/races/${id}`, {
       method: "DELETE"
     })
       .then(result => result.json())
   },
+  
   post(newRace) {
     //refactor this fetch call to make sure the new animal has the employeesId of the logged in user
     return fetch(`${remoteURL}/races`, {

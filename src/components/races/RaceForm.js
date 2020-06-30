@@ -10,7 +10,7 @@ class RaceForm extends Component {
     state = {
         raceName: "",
         distanceId: {},
-        userId: 1,
+        userId: JSON.parse(localStorage.getItem("credentials")).userId,
         raceDate: "",
         raceLocation: "",
         raceTemperature: "",
@@ -42,7 +42,7 @@ class RaceForm extends Component {
             const newRace = {
                 name: this.state.raceName,
                 distanceId: parseInt(this.state.distanceId),
-                userId: 1,
+                userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.raceDate,
                 location: this.state.raceLocation,
                 temperature: this.state.raceTemperature,

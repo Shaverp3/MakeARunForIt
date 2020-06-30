@@ -7,8 +7,7 @@ import RaceEditForm from './RaceEditForm'
 import DistanceManager from '../../modules/DistanceManager'
 //import Picker from 'react-mobile-picker';
 //Everything is done in this component - all details of races, editing of race, add new Race and delete race.
-//Need to print distance.name to race details card based on what distanceId is in each race - so need to create a new fetch method that will expand distances based on distandId of currentRaceInLoop.
-//Also need to populate RaceEditForm with existing distance name based on distanceId of raceToEdit using same fetch method as above.
+
 class RaceList extends Component {
     //define what this component needs to render
     state = {
@@ -21,7 +20,7 @@ class RaceList extends Component {
     deleteRace = id => {
         RaceManager.delete(id)
             .then(() => {
-                RaceManager.getAll()
+                RaceManager.getAll(JSON.parse(localStorage.getItem("credentials")).userId)
                     .then((newRaces) => {
                         this.setState({
                             racesInState: newRaces
@@ -41,7 +40,7 @@ class RaceList extends Component {
 
         RaceManager.update(editedRace)
             .then(() => {
-                RaceManager.getAll()
+                RaceManager.getAll(JSON.parse(localStorage.getItem("credentials")).userId)
                     .then((racesFromAPI) => {
                         console.log(racesFromAPI)
                         this.setState({
@@ -52,14 +51,10 @@ class RaceList extends Component {
             })
     };
 
-
-
-    unchangedElements = {}
-
     componentDidMount() {
         console.log("RACE LIST: ComponentDidMount");
 
-        RaceManager.getAll()
+        RaceManager.getAll(JSON.parse(localStorage.getItem("credentials")).userId)
             .then((racesFromAPI) => {
                 console.log(racesFromAPI)
                 this.setState({
@@ -67,8 +62,6 @@ class RaceList extends Component {
                 })
             })
 
-
-        //This is the method that needs to be changed to the DistanceManager.GetWithRaces     
         DistanceManager.getAll()
             .then((distancesInAPI) => {
                 console.log(distancesInAPI)
@@ -78,13 +71,9 @@ class RaceList extends Component {
             })
     }
 
-
-    /*using .map instead of foreach*/
     render() {
-        console.log("RACE LIST: Render");
 
         return (
-            //add this button above your display of animal cards
             <>
                 <section className="section-content">
                     <Button variant="primary"
@@ -120,19 +109,15 @@ class RaceList extends Component {
                                             disabled={this.state.loadingStatus}
                                             onClick={() => { this.editRace(currentRaceInLoop.id) }}>Edit
                                     </Button>
-
                                     </Card.Body>
                                 </Accordion.Collapse>
-
                             </Card>) : (<RaceEditForm key={currentRaceInLoop.id} race={currentRaceInLoop} handleUpdate={this.updateExistingRace} editRace={this.editRace} />)
                     })
                     }
-
                 </Accordion>
             </>)
     }
 
 }
-
 
 export default RaceList

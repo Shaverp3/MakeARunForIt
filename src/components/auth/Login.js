@@ -1,65 +1,90 @@
 import React, { Component } from "react"
-
+import UserManager from "../../modules/UserManager"
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import { Link } from "react-router-dom"
 class Login extends Component {
 
-  // Set initial state
   state = {
     email: "",
-    password: ""
+    password: "",
   }
 
-  // Update state whenever an input field is edited
+
   handleFieldChange = (evt) => {
     const stateToChange = {}
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
   }
 
+
   handleLogin = (e) => {
     e.preventDefault()
-    /*
-        For now, just store the email and password that
-        the customer enters into local storage.
-    */
-
-// Fetch JSON server the user that matches this email or username
-// Check and make srure the employee's password in the database matches the pw that the user typed in
-//Store the employee's id in local storage instead of their email and password
-//Need to add employeesId field to all tables
-    localStorage.setItem(
-        "credentials",
-        JSON.stringify({
+    UserManager.filterGetAll(this.state.email, this.state.password)
+      //console.log(this.state.email, this.state.password)
+      .then((usersArray) => {
+         if (usersArray.length === 0) {
+          //console.log(usersArray)
+         alert("Please enter a valid email address and password.")
+         } else {
+        localStorage.setItem(
+          "credentials",
+          JSON.stringify({
             email: this.state.email,
-            password: this.state.password
-        })
-    )
+            password: this.state.password,
+            userId: usersArray[0].id,
+          })
+        )}
     this.props.history.push("/");
+  }
+      )
+    }
 
+  handleRegister = () => {
+    this.props.history.push("/register")
   }
 
   render() {
     return (
-      <form onSubmit={this.handleLogin}>
-        <fieldset>
-            <h3>Please sign in</h3>
-            <div className="formgrid">
-                <input onChange={this.handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email address"
-                    required="" autoFocus="" />
-                <label htmlFor="inputEmail">Email address</label>
+      <Form onSubmit={this.handleLogin}>
+        <h3>Welcome to Make a Run For It!</h3>
+        <h4>Please sign in</h4>
 
-                <input onChange={this.handleFieldChange} type="password"
-                    id="password"
-                    placeholder="Password"
-                    required="" />
-                <label htmlFor="inputPassword">Password</label>
-            </div>
-            <button type="submit">
-                Sign in
-            </button>
-        </fieldset>
-      </form>
+        <Form.Label>Email Address: </Form.Label>
+        <Form.Control
+          onChange={this.handleFieldChange}
+          type="email"
+          id="email"
+          placeholder="Email address"
+          required
+          autoFocus="" />
+
+        <Form.Label>Password: </Form.Label>
+        <Form.Control
+          onChange={this.handleFieldChange}
+          type="password"
+          id="password"
+          placeholder="Password"
+          required />
+        <Button
+          className="submit-btn"
+          variant="success"
+          style={{ float: 'left', backgroundColor: '#f3532b', color: '#0f6b8d' }}
+          type="submit"
+          size="sm"
+          >
+          Sign in
+        </Button>
+        <Button
+          className="submit-btn"
+          variant="success"
+          style={{ float: 'right', backgroundColor: '#0f6b8d', color: '#f3532b' }}
+          type="button"
+          size="sm"
+          onClick={() => this.handleRegister()}>
+          Register Account
+       </Button>
+      </Form>
     )
   }
 

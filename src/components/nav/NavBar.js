@@ -7,6 +7,10 @@ import './NavBar.css'
 import { Link } from 'react-router-dom';
 
 class NavBar extends Component {
+    isAuthenticated =() => localStorage.getItem("credentials")!== null;
+
+    //The Method here clears the local storage.
+    clearStorage = () => localStorage.clear();
 
     render() {
         return (
@@ -24,6 +28,10 @@ class NavBar extends Component {
                         </Nav.Item>
                         <Nav.Item>
                         <Nav.Link><Link style={{color:'#ebebeb'}} className="nav-link" to="/">Reports</Link>
+                        </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                        <Nav.Link><Link style={{color:'#ebebeb'}} className="nav-link" to="/" onClick={this.clearStorage}>Logout</Link>
                         </Nav.Link>
                         </Nav.Item>
                     </Nav>

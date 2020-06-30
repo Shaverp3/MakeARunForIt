@@ -4,6 +4,8 @@ import Home from './home/Home'
 import Login from './auth/Login'
 import RaceForm from './races/RaceForm'
 import RaceList from './races/RaceList'
+import Register from './auth/Register'
+
 
 class ApplicationViews extends Component {
 
@@ -22,8 +24,14 @@ class ApplicationViews extends Component {
         return (
             <>
                 <Route exact path="/" render={(props) => {
+                    if (this.isAuthenticated()) {
                     return <Home />
-                }} />
+                    } else {
+                        return <Redirect to ="/login"/>;
+                    }
+                }}
+                />
+
                 <Route
                     path="/races/new"
                     render={(props) => {
@@ -40,6 +48,7 @@ class ApplicationViews extends Component {
                     }} />
 
                 <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
 
             </>
         )

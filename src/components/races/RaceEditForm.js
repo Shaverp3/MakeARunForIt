@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container, Form } from 'react-bootstrap'
+import { Button, Col, Form, InputGroup } from 'react-bootstrap'
 import './RaceForm.css'
 //import RaceManager from '../../modules/RaceManager'
 import DistanceManager from '../../modules/DistanceManager'
@@ -8,8 +8,8 @@ class RaceEditForm extends Component {
     //Sending in raceToEdit from RaceList
     state = {
         raceName: this.props.race.name,
-        distanceId: this.props.distanceId,
-        userId: 1,
+        distanceId: this.props.race.distance.id,
+        userId: JSON.parse(localStorage.getItem("credentials")).userId,
         raceDate: this.props.race.date,
         raceLocation: this.props.race.location,
         raceTemp: this.props.race.temperature,
@@ -39,8 +39,8 @@ class RaceEditForm extends Component {
             const editedRace = {
                 id: this.props.race.id,
                 name: this.state.raceName,
-                distanceId: this.props.distanceId,
-                userId: 1,
+                distanceId: parseInt(this.state.distanceId),
+                userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.raceDate,
                 location: this.state.raceLocation,
                 temperature: this.state.raceTemp,
@@ -70,83 +70,207 @@ class RaceEditForm extends Component {
             })
     }
 
-
-
     // Inline edit Form that appears on the TaskList page; pay attention to value and onClick functionality
     render() {
-
         return (
             <>
-                <Container className="inline-edit-form"><br />
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Race Name: </Form.Label>
-                            <Form.Control type="text" id="raceName" required
-                                onChange={this.handleFieldChange} value={this.state.raceName} onKeyDown={this.handleKeyDown} />
-                            <Form.Label>Race Date: </Form.Label>
+                <Form>
+                    <Form.Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Date:
+                            </Form.Label>
                             <Form.Control
-                            type="text"
-                            id="raceDate"
-                            onChange={this.handleFieldChange} value={this.state.raceDate} onKeyDown ={this.handleKeyDown}/>
-
-                            <Form.Label> Location: </Form.Label>
-                            <Form.Control type="text" id="raceLocation" onChange={this.handleFieldChange}
-                            value={this.state.raceLocation} onKeyDown={this.handleKeyDown}/>
-
-                            <Form.Label>Select Distance:</Form.Label>
-                            <select
                                 size="sm"
-                                className="form-control"
+                                type="text"
+                                id="inlineFormInput"
+                                onChange={this.handleFieldChange}
+                                value={this.state.raceDate}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Race Name:
+                            </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="inlineFormInput"
+                                onChange={this.handleFieldChange}
+                                value={this.state.raceName}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Location:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="raceLocation"
+                                onChange={this.handleFieldChange}
+                                value={this.state.raceLocation}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto" className="my-1">
+                            <Form.Label className="mr-sm-2" htmlFor="inlineFormCustomSelect" column="sm" lg={2}>
+                                Select Distance:
+                            </Form.Label>
+                            <Form.Control
+                                as="select"
+                                className="mr-sm-2"
+                                size="sm"
                                 id="distanceId"
-                                value={this.props.race.distance.id}
+                                value={this.state.distanceId}
                                 onChange={this.handleFieldChange}
                             >
-                            {this.state.distances.map(distance => 
-                                 <option
-                                    key={distance.id}
-                                    value={distance.id}>{distance.name}
-                                 </option>)}
-                            </select>
-                            
-                            {/* <Form.Label>Temp: </Form.Label>
-                            <Form.Control type="text" id="raceTemp"                                onChange={this.handleFieldChange} value={this.state.raceTemp} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label>Gun Time:</Form.Label>
-                            <Form.Control type="text" id="gunTime" onChange={this.handleFieldChange} value={this.state.gunTime} onKeyDown={this.handleKeyDown} />
-                            | <Form.Lable>Net Time: </Form.Lable>
-                            <Form.Control type="text" id="netTime" onChange={this.handleFieldChange} value={this.state.netTime} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label>Pace: </Form.Label>
-                            <Form.Control type="text" id="Pace" onChange={this.handleFieldChange} value={this.state.pace} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label> Overall Place: </Form.Label>
-                            <Form.Control type="text" id="overallPlace" onChange={this.handleFieldChange} value={this.state.overallPlace} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label>Gender Place: </Form.Label>
-                            <Form.Control type="text" id="genderPlace" onChange={this.handleFieldChange} value={this.state.genderPlace} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label>Division Place: </Form.Label>
-                            <Form.Control type="text" id="ageGenderPlace" onChange={this.handleFieldChange} value={this.state.ageGenderPlace} onKeyDown={this.handleKeyDown} />
-                            | <Form.Label>Notes: </Form.Label>
-                            <Form.Control type="text" id="journalEntry" onChange={this.handleFieldChange} value={this.state.journalEntry} onKeyDown={this.handleKeyDown} />
-                           
-                            <div className="button-row">
-                                <Button className="cancel-btn"
-                                    variant="warning"
-                                    style={{ float: 'right', backgroundColor: '#0f6b8d', color: '#f3532b' }}
-                                    type="button"
-                                    size="sm"
-                                    onClick={() => this.props.editRace("")}>
-                                    Cancel
+                                {this.state.distances.map(distance =>
+                                    <option
+                                        key={distance.id}
+                                        value={distance.id}>{distance.name}
+                                    </option>)}
+                            </Form.Control>
+                        </Col>
+                        </Form.Row>
+                        <Form.Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Temp:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="raceTemp"
+                                onChange={this.handleFieldChange}
+                                value={this.state.raceTemp}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Gun Time:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="gunTime"
+                                onChange={this.handleFieldChange}
+                                value={this.state.gunTime}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Net Time:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="netTime"
+                                onChange={this.handleFieldChange}
+                                value={this.state.netTime}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Pace:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="pace"
+                                onChange={this.handleFieldChange}
+                                value={this.state.pace}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        </Form.Row>
+                        <Form.Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Overall Place:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="overallPlace"
+                                onChange={this.handleFieldChange}
+                                value={this.state.overallPlace}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Gender Place:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="genderPlace"
+                                onChange={this.handleFieldChange}
+                                value={this.state.genderPlace}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Division Place:
+                        </Form.Label>
+                            <Form.Control
+                                size="sm"
+                                type="text"
+                                id="ageGenderPlace"
+                                onChange={this.handleFieldChange}
+                                value={this.state.ageGenderPlace}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        </Form.Row>
+                        <Form.Row className="align-items-center">
+                        <Col xs="auto">
+                            <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
+                                Notes:
+                        </Form.Label>
+                            <Form.Control as="textarea"
+                                size="sm"
+                                rows="3"
+                                id="raceJournalEntry"
+                                onChange={this.handleFieldChange}
+                                value={this.state.raceJournalEntry}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        </Col>
+                        </Form.Row>
+                       
+                        {/* <Col xs="auto">
+                            <Button type="submit" className="mb-2">
+                                Submit
                             </Button>
-                                <Button className="submit-btn"
-                                    variant="success"
-                                    style={{ float: 'right', backgroundColor: '#f3532b', color: '#0f6b8d', marginRight: '.5em' }}
-                                    type="submit"
-                                    size="sm"
-                                    onClick={() => this.makeEditedRace()}>
-                                    Save Changes
+                        </Col> */}
+                        <div className="button-row">
+                            <Button className="cancel-btn"
+                                variant="warning"
+                                style={{ float: 'right', backgroundColor: '#0f6b8d', color: '#f3532b' }}
+                                type="button"
+                                size="sm"
+                                onClick={() => this.props.editRace("")}>
+                                Cancel
                             </Button>
-                            </div> */}
-                            </Form.Group>
-                    
-                    </Form>
-            </Container>
+                            <Button className="submit-btn"
+                                variant="success"
+                                style={{ float: 'right', backgroundColor: '#f3532b', color: '#0f6b8d', marginRight: '.5em' }}
+                                type="submit"
+                                size="sm"
+                                onClick={() => this.makeEditedRace()}>
+                                Save Changes
+                            </Button>
+                        </div>
+                        </Form> 
             </>
         )
     }

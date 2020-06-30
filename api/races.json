@@ -2,15 +2,27 @@
   "users": [
     {
       "id": 1,
-      "name": "Pat Shaver",
       "email": "pat.shaver@icloud.com",
+      "username": "shaverp",
       "password": "abc123"
     },
     {
       "id": 2,
-      "name": "Charlotte Shaver",
-      "email": "psh.shaver@email.com",
+      "email": "pat@email.com",
+      "username": "pat",
       "password": "abc123"
+    },
+    {
+      "id": 3,
+      "email": "psh.shaver@email.com",
+      "username": "cshaver",
+      "password": "abc123"
+    },
+    {
+      "email": "pat@email.com",
+      "password": "abc123",
+      "username": "pat",
+      "id": 4
     }
   ],
   "distances": [
@@ -73,8 +85,8 @@
     {
       "id": 4,
       "name": "Race Into the New Year Prediction 5K",
-      "userId": 1,
       "distanceId": 1,
+      "userId": 2,
       "date": "1/1/2017",
       "location": "St. Albans, WV",
       "temperature": "46",
@@ -90,7 +102,6 @@
       "id": 5,
       "name": "Dachshund Through the Snow 5K",
       "distanceId": 1,
-      "userId": 1,
       "date": "1/29/2017",
       "location": "Charleston, WV",
       "temperature": "36",
@@ -100,7 +111,7 @@
       "overallPlace": "129/248",
       "genderPlace": "62/153",
       "ageGenderPlace": "1/8",
-      "journalEntry": ""
+      "journalEntry": "It snowed"
     },
     {
       "id": 6,
@@ -120,8 +131,8 @@
     },
     {
       "name": "Race For The Cure",
-      "distanceId": 1,
       "userId": 1,
+      "distanceId": 1,
       "date": "05/06/2017",
       "location": "Charleston, WV",
       "temperature": "",
@@ -135,9 +146,10 @@
       "journalEntry": ""
     },
     {
+      "id": 9,
       "name": "Almost Heaven Trail Run",
       "distanceId": 8,
-      "userId": 1,
+      "userId": 2,
       "date": "07/22/2017",
       "location": "St. Albans, WV",
       "temperature": "90",
@@ -147,8 +159,7 @@
       "overallPlace": "78/165",
       "genderPlace": "33/98",
       "ageGenderPlace": "3/16",
-      "journalEntry": "Hot and Humid - Trail very narrow - tripped a bunch of times but did not fall.",
-      "id": 9
+      "journalEntry": "Hot and Humid - Trail very narrow - tripped a bunch of times but did not fall."
     },
     {
       "id": 10,
