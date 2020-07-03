@@ -25,7 +25,7 @@ class Login extends Component {
       .then((usersArray) => {
          if (usersArray.length === 0) {
           //console.log(usersArray)
-         alert("Please enter a valid email address and password.")
+         alert("Please enter a valid email address and password.  Or click Register if you are a new user.")
          } else {
         localStorage.setItem(
           "credentials",

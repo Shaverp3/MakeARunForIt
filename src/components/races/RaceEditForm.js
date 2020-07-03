@@ -230,15 +230,13 @@ class RaceEditForm extends Component {
                                 onKeyDown={this.handleKeyDown}
                             />
                         </Col>
-                        </Form.Row>
-                        <Form.Row className="align-items-center">
                         <Col xs="auto">
                             <Form.Label htmlFor="inlineFormInput" column="sm" lg={2}>
                                 Notes:
                         </Form.Label>
                             <Form.Control as="textarea"
                                 size="sm"
-                                rows="3"
+                                rows="2"
                                 id="raceJournalEntry"
                                 onChange={this.handleFieldChange}
                                 value={this.state.raceJournalEntry}

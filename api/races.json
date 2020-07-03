@@ -23,6 +23,12 @@
       "password": "abc123",
       "username": "pat",
       "id": 4
+    },
+    {
+      "email": "mary@yahoo.com",
+      "password": "abc123",
+      "username": "mary",
+      "id": 5
     }
   ],
   "distances": [
@@ -102,6 +108,7 @@
       "id": 5,
       "name": "Dachshund Through the Snow 5K",
       "distanceId": 1,
+      "userId": 1,
       "date": "1/29/2017",
       "location": "Charleston, WV",
       "temperature": "36",
@@ -126,13 +133,14 @@
       "pace": "",
       "overallPlace": "106/251",
       "genderPlace": "49/153",
-      "ageGenderPlace": "",
+      "ageGenderPlace": "1/7",
       "journalEntry": "Very Cold"
     },
     {
+      "id": 7,
       "name": "Race For The Cure",
-      "userId": 1,
       "distanceId": 1,
+      "userId": 1,
       "date": "05/06/2017",
       "location": "Charleston, WV",
       "temperature": "",
@@ -141,15 +149,14 @@
       "pace": "9:40",
       "overallPlace": "71/162",
       "genderPlace": "21/84",
-      "ageGenderPlace": "",
-      "id": 7,
-      "journalEntry": ""
+      "ageGenderPlace": "4/9",
+      "journalEntry": "Jayden's first 5k - came in 3rd in his age group!"
     },
     {
       "id": 9,
       "name": "Almost Heaven Trail Run",
       "distanceId": 8,
-      "userId": 2,
+      "userId": 1,
       "date": "07/22/2017",
       "location": "St. Albans, WV",
       "temperature": "90",
@@ -176,6 +183,54 @@
       "genderPlace": "39/91",
       "ageGenderPlace": "6/14",
       "journalEntry": "The distance was more than a quarter mile too long."
+    },
+    {
+      "name": "Celtic Kilt",
+      "distanceId": 1,
+      "userId": 5,
+      "date": "03/03/2018",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "34:19.9",
+      "netTime": "34:17.7",
+      "pace": "10:39",
+      "overallPlace": "19/61",
+      "genderPlace": "8/37",
+      "ageGenderPlace": "3/9",
+      "journalEntry": "This race goes up Spring Hill Cemetary Road which is very steep.  Fastest mile I've had ever coming back down that road - 8:11",
+      "id": 11
+    },
+    {
+      "name": "Pumpkin Festival Trail Run",
+      "distanceId": 1,
+      "userId": 5,
+      "date": "09/30/2017",
+      "location": "Milton, WV",
+      "temperature": "",
+      "gunTime": "30:47",
+      "netTime": "30:47",
+      "pace": "9:55",
+      "overallPlace": "21/40",
+      "genderPlace": "9/22",
+      "ageGenderPlace": "1/3",
+      "journalEntry": "Jayden ran this race with me and came in 2nd OVERALL!!",
+      "id": 12
+    },
+    {
+      "name": "Charleston Distance Run",
+      "distanceId": 6,
+      "userId": 1,
+      "date": "09/02/2017",
+      "location": "Charleston, WV",
+      "temperature": "72",
+      "gunTime": "2:48:59.1",
+      "netTime": "2:48:37.7",
+      "pace": "11:15",
+      "overallPlace": "308/405",
+      "genderPlace": "116/171",
+      "ageGenderPlace": "3/6",
+      "journalEntry": "This was a great race - a ton of fun!",
+      "id": 13
     }
   ]
 }

@@ -5,7 +5,9 @@ import Login from './auth/Login'
 import RaceForm from './races/RaceForm'
 import RaceList from './races/RaceList'
 import Register from './auth/Register'
-
+import PersonalBestByDistance from './reports/PersonalBestByDistance'
+import DivisionPlacedInTop3 from './reports/DivisionPlacedInTop3'
+import RacesByDistanceInNetTimeOrder from './reports/RacesByDistanceInNetTimeOrder'
 
 class ApplicationViews extends Component {
 
@@ -25,9 +27,9 @@ class ApplicationViews extends Component {
             <>
                 <Route exact path="/" render={(props) => {
                     if (this.isAuthenticated()) {
-                    return <Home />
+                        return <Home />
                     } else {
-                        return <Redirect to ="/login"/>;
+                        return <Redirect to="/login" />;
                     }
                 }}
                 />
@@ -47,6 +49,34 @@ class ApplicationViews extends Component {
                         }
                     }} />
 
+                <Route path="/reports/PersonalBest"
+                    render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <PersonalBestByDistance {...props} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }}
+                />
+
+                <Route path="/reports/DivisionPlaced"
+                    render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <DivisionPlacedInTop3 {...props} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }}
+                />
+                <Route path="/reports/DistanceByFastest"
+                    render={(props) => {
+                        if (this.isAuthenticated()) {
+                            return <RacesByDistanceInNetTimeOrder {...props} />
+                        } else {
+                            return <Redirect to="/login" />
+                        }
+                    }}
+                />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
 

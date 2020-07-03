@@ -47,6 +47,9 @@ img{
     width: 80%
 }
 
+div.Navbar {
+    width: 100vw;
+}
 .Nav-link {
     color: #ebebeb;
 }
