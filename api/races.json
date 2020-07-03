@@ -263,6 +263,22 @@
       "ageGenderPlace": "6/21",
       "journalEntry": "",
       "id": 15
+    },
+    {
+      "name": "Rockin' Red Dragons",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "03/24/2018",
+      "location": "St. Albans, WV",
+      "temperature": "",
+      "gunTime": "31:06.7",
+      "netTime": "31:06.6",
+      "pace": "10:01",
+      "overallPlace": "22/65",
+      "genderPlace": "5/37",
+      "ageGenderPlace": "1/6",
+      "journalEntry": "",
+      "id": 16
     }
   ]
 }

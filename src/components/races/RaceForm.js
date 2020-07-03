@@ -9,11 +9,11 @@ import DistanceManager from '../../modules/DistanceManager';
 class RaceForm extends Component {
     state = {
         raceName: "",
-        distanceId: {},
+        distanceId: null,
         userId: JSON.parse(localStorage.getItem("credentials")).userId,
         raceDate: "",
         raceLocation: "",
-        raceTemperature: "",
+        raceTemp: "",
         gunTime: "",
         netTime: "",
         pace: "",
@@ -45,7 +45,7 @@ class RaceForm extends Component {
                 userId: JSON.parse(localStorage.getItem("credentials")).userId,
                 date: this.state.raceDate,
                 location: this.state.raceLocation,
-                temperature: this.state.raceTemperature,
+                temperature: this.state.raceTemp,
                 gunTime: this.state.gunTime,
                 netTime: this.state.netTime,
                 pace: this.state.pace,
@@ -144,7 +144,7 @@ class RaceForm extends Component {
                                 className="mb-2 mr-sm-2"
                                 type="text"
                                 onChange={this.handleFieldChange}
-                                id="raceTemperature"
+                                id="raceTemp"
                                 placeholder="Temp at Race Time"
                             />
                         </Form.Group>
@@ -212,7 +212,7 @@ class RaceForm extends Component {
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formGridAgeGender">
-                            <Form.Label>Age/Gender Place:</Form.Label>
+                            <Form.Label>Division Place:</Form.Label>
                             <Form.Control
                                 size="sm"
                                 className="mb-2 mr-sm-2"

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import RaceManager from '../../modules/RaceManager'
 //import Accordion from 'react-bootstrap/Accordion'
-import Card from 'react-bootstrap/Card'
+//import Card from 'react-bootstrap/Card'
+import Table from 'react-bootstrap/Table'
 //import Button from 'react-bootstrap/Button'
 import DistanceManager from '../../modules/DistanceManager'
 
@@ -10,7 +11,7 @@ class DistanceOrderedByFastest extends Component {
     state = {
         racesInState: [],
         distancesInState: [],
-        racesSortedByTimeInState: [],
+        racesByDistanceInState: [],
         loadingStatus: false
     };
 
@@ -26,59 +27,68 @@ class DistanceOrderedByFastest extends Component {
                 console.log("race 2", racesFromAPI[1], netSeconds2)
                 DistanceManager.getAll()
                     .then((distancesFromAPI) => {
-                        let sortedByTimeArray = []
+                        let distanceSortedByTimeArray = []
+
                         for (let d = 0; d < distancesFromAPI.length; d++) {
                             console.log("this is the distance", distancesFromAPI[d])
-                            //distancesInState: distancesFromAPI
+
                             // const result = words.filter(word => word.length > 6);
                             const filteredRaces = racesFromAPI.filter(race => race.distanceId === distancesFromAPI[d].id)
                             console.log("these are the filtered races", filteredRaces)
 
                             const sortedRaces = filteredRaces.sort((function (a, b) { return a.netTime.split(":")[0] - b.netTime.split(":")[0] }))
-
-                            console.log("personal best", sortedRaces[0])
+                            console.log("these are the sorted races", sortedRaces)
 
                             if (sortedRaces[0] !== undefined) {
-                                for (let i = 0; i < sortedRaces.length; i++) { sortedByTimeArray.push(sortedRaces[i]) }
-                                
+                                let distanceObject = {
+                                    distanceName: distancesFromAPI[d].name,
+                                    races: sortedRaces
+                                }
+                                console.log(distanceObject)
+                                distanceSortedByTimeArray.push(distanceObject)
                             }
-                                
-                            
                         }
-                        this.setState({ racesSortedByTimeInState: sortedByTimeArray })
+                        this.setState({ racesByDistanceInState: distanceSortedByTimeArray })
                     }
-                   
                     )
-            }
-            )
+            })
     }
+
 
     render() {
 
         return (
             <>
                 <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>By Distance and Time</h5>
-                {this.state.racesSortedByTimeInState.map((currentRaceInLoop) => {
-                    return (
-                    <Card variant="info" style={{ width: '18rem', backgroundColor: '#0593b3'}}>
-                        <Card.Body>
-                            <Card.Title>{currentRaceInLoop.name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{currentRaceInLoop.distance.name}
-                            </Card.Subtitle>
-                            <Card.Text>
-                                {currentRaceInLoop.date} {currentRaceInLoop.location}  {currentRaceInLoop.netTime}
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>)
-                })}
-
-            </>
-        )
-    }
-
-}
-
+                {this.state.racesByDistanceInState.map((currentDistanceInLoop) => {
+                    console.log(currentDistanceInLoop)
+                    return (<>
+                        <Table striped bordered hover>
+                            
+                            <thead style={{fontSize: '14px', fontWeight: 'bold', textAlign: 'center'}}>{currentDistanceInLoop.distanceName}</thead> 
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Race Name</th>
+                                    <th>Location</th>
+                                    <th>Net Time/Ascending</th>
+                                </tr>
+                            
+                            {currentDistanceInLoop.races.map((currentRaceInLoop) => {
+                                return (<>
+                                    <tbody>
+                                        <tr>
+                                            <td>{currentRaceInLoop.date}</td>
+                                            <td>{currentRaceInLoop.name}</td>
+                                            <td>{currentRaceInLoop.location}</td>
+                                            <td>{currentRaceInLoop.netTime}</td>
+                                        </tr>
+                                    </tbody>
+                                </>)
+                            })}
+                        </Table>
+                    </>
+                    )
+                })
+                }</>)}}
 
 export default DistanceOrderedByFastest
