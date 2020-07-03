@@ -49,7 +49,7 @@ class DivisionPlaced extends Component {
 
         return (
             <>
-                <h4 style={{ textAlign: 'center', color: '#0593b3' }}>Races Division Placement in Top 3</h4>
+                <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>Races Division Placement in Top 3</h5>
                 {this.state.top3InState.map((currentRaceInLoop) => {
                     return (
                         <Card variant="info" style={{ width: '18rem', backgroundColor: '#0593b3' }}>

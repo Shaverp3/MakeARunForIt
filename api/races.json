@@ -231,6 +231,38 @@
       "ageGenderPlace": "3/6",
       "journalEntry": "This was a great race - a ton of fun!",
       "id": 13
+    },
+    {
+      "name": "Charleston Winter Series Race #1",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "12/10/2017",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "29:02.8",
+      "netTime": "28:51.6",
+      "pace": "9:21",
+      "overallPlace": "152/349",
+      "genderPlace": "62/189",
+      "ageGenderPlace": "7/31",
+      "journalEntry": "Second 5k in as many days.",
+      "id": 14
+    },
+    {
+      "name": "Charleston Winter Series Race #2",
+      "distanceId": 9,
+      "userId": 1,
+      "date": "01/14/2018",
+      "location": "Charleston, WV",
+      "temperature": "29",
+      "gunTime": "50:41.8",
+      "netTime": "50:23.7",
+      "pace": "10:12",
+      "overallPlace": "131/260",
+      "genderPlace": "54/146",
+      "ageGenderPlace": "6/21",
+      "journalEntry": "",
+      "id": 15
     }
   ]
 }

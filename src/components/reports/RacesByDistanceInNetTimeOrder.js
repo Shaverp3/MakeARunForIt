@@ -57,7 +57,7 @@ class DistanceOrderedByFastest extends Component {
 
         return (
             <>
-                <h4 style={{textAlign: 'center', color: '#0593b3'}}>Races Completed in Asending Order by Net Time</h4>
+                <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>By Distance and Time</h5>
                 {this.state.racesSortedByTimeInState.map((currentRaceInLoop) => {
                     return (
                     <Card variant="info" style={{ width: '18rem', backgroundColor: '#0593b3'}}>
