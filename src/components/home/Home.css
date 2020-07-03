@@ -60,6 +60,7 @@ ul
     text-shadow: 2px 2px 5px #f3532b;
     margin: 100px 0 0;
     border-bottom: 2px solid #ccc;
+    animation-iteration-count: 5;
 }
 
 .animate span {

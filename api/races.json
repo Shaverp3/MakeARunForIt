@@ -137,22 +137,6 @@
       "journalEntry": "Very Cold"
     },
     {
-      "id": 7,
-      "name": "Race For The Cure",
-      "distanceId": 1,
-      "userId": 1,
-      "date": "05/06/2017",
-      "location": "Charleston, WV",
-      "temperature": "",
-      "gunTime": "30:01.9",
-      "netTime": "29:56.8",
-      "pace": "9:40",
-      "overallPlace": "71/162",
-      "genderPlace": "21/84",
-      "ageGenderPlace": "4/9",
-      "journalEntry": "Jayden's first 5k - came in 3rd in his age group!"
-    },
-    {
       "id": 9,
       "name": "Almost Heaven Trail Run",
       "distanceId": 8,
@@ -279,6 +263,22 @@
       "ageGenderPlace": "1/6",
       "journalEntry": "",
       "id": 16
+    },
+    {
+      "name": "Marshall Marathon",
+      "distanceId": 4,
+      "userId": 1,
+      "date": "11/04/2017",
+      "location": "Huntington, WV",
+      "temperature": "",
+      "gunTime": "5:15:30",
+      "netTime": "5:11:00",
+      "pace": "11:15",
+      "overallPlace": "",
+      "genderPlace": "",
+      "ageGenderPlace": "",
+      "journalEntry": "",
+      "id": 17
     }
   ]
 }

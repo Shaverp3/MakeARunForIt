@@ -12,7 +12,7 @@ class Home extends Component {
     
       </div>
 
-<div class="two" id="div2">For</div>
+<div class="two" id="div2">Built For</div>
 <div class="three" id="div3">Runners</div>
 <div class="four" id="div4">By</div>
 <div class="five" id="div5">Pat</div>
