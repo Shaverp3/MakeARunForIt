@@ -1,0 +1,284 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "pat.shaver@icloud.com",
+      "username": "shaverp",
+      "password": "abc123"
+    },
+    {
+      "id": 2,
+      "email": "pat@email.com",
+      "username": "pat",
+      "password": "abc123"
+    },
+    {
+      "id": 3,
+      "email": "psh.shaver@email.com",
+      "username": "cshaver",
+      "password": "abc123"
+    },
+    {
+      "email": "pat@email.com",
+      "password": "abc123",
+      "username": "pat",
+      "id": 4
+    },
+    {
+      "email": "mary@yahoo.com",
+      "password": "abc123",
+      "username": "mary",
+      "id": 5
+    }
+  ],
+  "distances": [
+    {
+      "id": 1,
+      "name": "5k",
+      "distance": 5,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 2,
+      "name": "10k",
+      "distance": 10,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 3,
+      "name": "Half-marathon",
+      "distance": 13.1,
+      "measurement": "miles"
+    },
+    {
+      "id": 4,
+      "name": "Marathon",
+      "distance": 26.2,
+      "measurement": "miles"
+    },
+    {
+      "id": 5,
+      "name": "2-Miler",
+      "distance": 2,
+      "measurement": "miles"
+    },
+    {
+      "id": 6,
+      "name": "15-Miler",
+      "distance": 15,
+      "measurement": "miles"
+    },
+    {
+      "id": 7,
+      "name": "10-Miler",
+      "distance": 10,
+      "measurement": "miles"
+    },
+    {
+      "id": 8,
+      "name": "7k",
+      "distance": 7,
+      "measurement": "kilometers"
+    },
+    {
+      "id": 9,
+      "name": "8k",
+      "distance": 8,
+      "measurement": "kilometers"
+    }
+  ],
+  "races": [
+    {
+      "id": 4,
+      "name": "Race Into the New Year Prediction 5K",
+      "distanceId": 1,
+      "userId": 2,
+      "date": "1/1/2017",
+      "location": "St. Albans, WV",
+      "temperature": "46",
+      "gunTime": "32:37.7",
+      "netTime": "32:33.4",
+      "pace": "10:25",
+      "overallPlace": "120/250",
+      "genderPlace": "61/153",
+      "ageGenderPlace": "10/20",
+      "journalEntry": "This race was run without running watch."
+    },
+    {
+      "id": 5,
+      "name": "Dachshund Through the Snow 5K",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "1/29/2017",
+      "location": "Charleston, WV",
+      "temperature": "36",
+      "gunTime": "32:19.4",
+      "netTime": "32:03.7",
+      "pace": "10:25",
+      "overallPlace": "129/248",
+      "genderPlace": "62/153",
+      "ageGenderPlace": "1/8",
+      "journalEntry": "It snowed"
+    },
+    {
+      "id": 6,
+      "name": "Sweetheart 5K",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "02/26/2017",
+      "location": "Nitro, WV",
+      "temperature": "",
+      "gunTime": "30:45.7",
+      "netTime": "30:33.6",
+      "pace": "",
+      "overallPlace": "106/251",
+      "genderPlace": "49/153",
+      "ageGenderPlace": "1/7",
+      "journalEntry": "Very Cold"
+    },
+    {
+      "id": 9,
+      "name": "Almost Heaven Trail Run",
+      "distanceId": 8,
+      "userId": 1,
+      "date": "07/22/2017",
+      "location": "St. Albans, WV",
+      "temperature": "90",
+      "gunTime": "1:01.58",
+      "netTime": "1:01.58",
+      "pace": "14:15",
+      "overallPlace": "78/165",
+      "genderPlace": "33/98",
+      "ageGenderPlace": "3/16",
+      "journalEntry": "Hot and Humid - Trail very narrow - tripped a bunch of times but did not fall."
+    },
+    {
+      "id": 10,
+      "name": "Jingle Bell Run",
+      "userId": 1,
+      "distanceId": 1,
+      "date": "12/17/2016",
+      "location": "Charleston, WV",
+      "temperature": "32",
+      "gunTime": "34:45.0",
+      "netTime": "34:38.4",
+      "pace": "11:05",
+      "overallPlace": "75/149",
+      "genderPlace": "39/91",
+      "ageGenderPlace": "6/14",
+      "journalEntry": "The distance was more than a quarter mile too long."
+    },
+    {
+      "name": "Celtic Kilt",
+      "distanceId": 1,
+      "userId": 5,
+      "date": "03/03/2018",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "34:19.9",
+      "netTime": "34:17.7",
+      "pace": "10:39",
+      "overallPlace": "19/61",
+      "genderPlace": "8/37",
+      "ageGenderPlace": "3/9",
+      "journalEntry": "This race goes up Spring Hill Cemetary Road which is very steep.  Fastest mile I've had ever coming back down that road - 8:11",
+      "id": 11
+    },
+    {
+      "name": "Pumpkin Festival Trail Run",
+      "distanceId": 1,
+      "userId": 5,
+      "date": "09/30/2017",
+      "location": "Milton, WV",
+      "temperature": "",
+      "gunTime": "30:47",
+      "netTime": "30:47",
+      "pace": "9:55",
+      "overallPlace": "21/40",
+      "genderPlace": "9/22",
+      "ageGenderPlace": "1/3",
+      "journalEntry": "Jayden ran this race with me and came in 2nd OVERALL!!",
+      "id": 12
+    },
+    {
+      "name": "Charleston Distance Run",
+      "distanceId": 6,
+      "userId": 1,
+      "date": "09/02/2017",
+      "location": "Charleston, WV",
+      "temperature": "72",
+      "gunTime": "2:48:59.1",
+      "netTime": "2:48:37.7",
+      "pace": "11:15",
+      "overallPlace": "308/405",
+      "genderPlace": "116/171",
+      "ageGenderPlace": "3/6",
+      "journalEntry": "This was a great race - a ton of fun!",
+      "id": 13
+    },
+    {
+      "name": "Charleston Winter Series Race #1",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "12/10/2017",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "29:02.8",
+      "netTime": "28:51.6",
+      "pace": "9:21",
+      "overallPlace": "152/349",
+      "genderPlace": "62/189",
+      "ageGenderPlace": "7/31",
+      "journalEntry": "Second 5k in as many days.",
+      "id": 14
+    },
+    {
+      "name": "Charleston Winter Series Race #2",
+      "distanceId": 9,
+      "userId": 1,
+      "date": "01/14/2018",
+      "location": "Charleston, WV",
+      "temperature": "29",
+      "gunTime": "50:41.8",
+      "netTime": "50:23.7",
+      "pace": "10:12",
+      "overallPlace": "131/260",
+      "genderPlace": "54/146",
+      "ageGenderPlace": "6/21",
+      "journalEntry": "",
+      "id": 15
+    },
+    {
+      "name": "Rockin' Red Dragons",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "03/24/2018",
+      "location": "St. Albans, WV",
+      "temperature": "",
+      "gunTime": "31:06.7",
+      "netTime": "31:06.6",
+      "pace": "10:01",
+      "overallPlace": "22/65",
+      "genderPlace": "5/37",
+      "ageGenderPlace": "1/6",
+      "journalEntry": "",
+      "id": 16
+    },
+    {
+      "name": "Marshall Marathon",
+      "distanceId": 4,
+      "userId": 1,
+      "date": "11/04/2017",
+      "location": "Huntington, WV",
+      "temperature": "",
+      "gunTime": "5:15:30",
+      "netTime": "5:11:00",
+      "pace": "11:15",
+      "overallPlace": "",
+      "genderPlace": "",
+      "ageGenderPlace": "",
+      "journalEntry": "",
+      "id": 17
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+/* @import url('https://fonts.googleapis.com/css?family=Comfortaa|Patua+One'); */
+
+/*Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: 'Comfortaa', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Patua One', serif;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+}
+
+.section-container{
+    padding: 1.5em;
+}
+
+.section-content{
+    text-align: center;
+}
+
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    width: 99vw;
+    padding: .75em;
+    margin: .5em;
+    color: #0593B3;
+    border: 1x solid gray;
+}
+
+img{
+    display: block;
+    height: auto;
+    border-radius: 50%;
+    width: 80%
+}
+
+div.Navbar {
+    width: 100vw;
+}
+.Nav-link {
+    color: #ebebeb;
+}
+
+.Navbar.Brand {
+    font-size: 30px;
+    color: #f3532b;
+}
+div {
+    color: #ebebeb; 
+}
+
+div.card-header {
+    color:#0593B3;
+}
+
+div.card-body {
+    background-color: #0593B3;
+    color: #ebebeb;
+    font-weight: bold;
+}
+
+.card-body.button.alignRight{
+    text-align: right;
+}
