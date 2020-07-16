@@ -105,22 +105,6 @@
       "journalEntry": "This race was run without running watch."
     },
     {
-      "id": 5,
-      "name": "Dachshund Through the Snow 5K",
-      "distanceId": 1,
-      "userId": 1,
-      "date": "1/29/2017",
-      "location": "Charleston, WV",
-      "temperature": "36",
-      "gunTime": "32:19.4",
-      "netTime": "32:03.7",
-      "pace": "10:25",
-      "overallPlace": "129/248",
-      "genderPlace": "62/153",
-      "ageGenderPlace": "1/8",
-      "journalEntry": "It snowed"
-    },
-    {
       "id": 6,
       "name": "Sweetheart 5K",
       "distanceId": 1,
@@ -265,20 +249,36 @@
       "id": 16
     },
     {
+      "id": 17,
       "name": "Marshall Marathon",
       "distanceId": 4,
       "userId": 1,
       "date": "11/04/2017",
       "location": "Huntington, WV",
-      "temperature": "",
+      "temperature": "55",
       "gunTime": "5:15:30",
       "netTime": "5:11:00",
       "pace": "11:15",
+      "overallPlace": "310/433",
+      "genderPlace": "64/107",
+      "ageGenderPlace": "4/17",
+      "journalEntry": ""
+    },
+    {
+      "name": "Fix 'em 5k",
+      "distanceId": 1,
+      "userId": 1,
+      "date": "02/17/2017",
+      "location": "Charleston, WV",
+      "temperature": "",
+      "gunTime": "27:59",
+      "netTime": "27:38",
+      "pace": "8:53",
       "overallPlace": "",
       "genderPlace": "",
-      "ageGenderPlace": "",
+      "ageGenderPlace": "1/21",
       "journalEntry": "",
-      "id": 17
+      "id": 18
     }
   ]
 }
