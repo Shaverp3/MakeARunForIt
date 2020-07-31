@@ -12,6 +12,7 @@ body
     font-size: 14px;
     color: #999999;
     word-wrap:break-word;
+    background-image: url(./marathon.png);
 }
 
 p

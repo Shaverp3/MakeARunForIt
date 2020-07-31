@@ -47,8 +47,8 @@ class Login extends Component {
   render() {
     return (
       <Form onSubmit={this.handleLogin}>
-        <h3>Welcome to Make a Run For It!</h3>
-        <h4>Please sign in</h4>
+        <h3 style={{textAlign:"center", color: '#f3532b', fontWeight: 'bold', textShadow: '2px 2px 5px black'}}>Welcome to Make a Run For It!</h3>
+        <h6 style={{textAlign:"center"}}>Please sign in if you already have a registered account, or select Register for a new account:</h6><br></br>
 
         <Form.Label>Email Address: </Form.Label>
         <Form.Control

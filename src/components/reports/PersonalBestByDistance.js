@@ -55,15 +55,15 @@ class PersonalBest extends Component {
 
         return (
             <>
-                <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>Personal Best by Distance Report</h5>
+                <h5 style={{ textAlign: 'center', color: '#f3532b', fontFamily: 'comfortaa, arial, san-serif', fontWeight:"bold", backgroundColor: '#ebebeb', marginBottom:'20px'}}>Personal Best by Distance Report</h5>
                 {this.state.personalBestInState.map((currentPRInLoop) => {
                     return (
                         <CardColumns>
                         <Card variant="info" style={{ width: '18rem', backgroundColor: '#0593b3' }}>
                             <Card.Body>
-                                <Card.Title style={{ textAlign: 'center', color: '#f3532b', fontWeight: 'bold' }}> {currentPRInLoop.distance.name}<br></br>
+                                <Card.Title style={{ textAlign: 'center', color: '#f3532b', fontWeight: 'bold', textShadow: '2px 2px 5px black' }}> {currentPRInLoop.distance.name}<br></br>
                                 </Card.Title>
-                                <Card.Subtitle style={{ color: '#f3532b', fontWeight: 'bold', textAlign: 'center' }}>{currentPRInLoop.netTime}
+                                <Card.Subtitle style={{ color: '#f3532b', fontWeight: 'bold', textAlign: 'center', textShadow: '2px 2px 5px black' }}>{currentPRInLoop.netTime}
                                 </Card.Subtitle><br></br>
                                 <Card.Text style={{ textAlign: 'center' }}>
                                     {currentPRInLoop.date}<br></br>

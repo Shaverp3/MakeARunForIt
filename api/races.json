@@ -29,6 +29,12 @@
       "password": "abc123",
       "username": "mary",
       "id": 5
+    },
+    {
+      "email": "marylin63@yahoo.com",
+      "password": "abc123",
+      "username": "Mary",
+      "id": 6
     }
   ],
   "distances": [
@@ -233,6 +239,7 @@
       "id": 15
     },
     {
+      "id": 16,
       "name": "Rockin' Red Dragons",
       "distanceId": 1,
       "userId": 1,
@@ -245,8 +252,7 @@
       "overallPlace": "22/65",
       "genderPlace": "5/37",
       "ageGenderPlace": "1/6",
-      "journalEntry": "",
-      "id": 16
+      "journalEntry": "Not many participants for the first year of this race"
     },
     {
       "id": 17,
@@ -279,6 +285,22 @@
       "ageGenderPlace": "1/21",
       "journalEntry": "",
       "id": 18
+    },
+    {
+      "name": "Celtic Kilt",
+      "distanceId": 1,
+      "userId": 2,
+      "date": "03/03/2018",
+      "location": "Charleston, WV",
+      "temperature": "55",
+      "gunTime": "31:06.7",
+      "netTime": "30:47",
+      "pace": "9:55",
+      "overallPlace": "19/61",
+      "genderPlace": "8/37",
+      "ageGenderPlace": "3/6",
+      "journalEntry": "",
+      "id": 19
     }
   ]
 }
