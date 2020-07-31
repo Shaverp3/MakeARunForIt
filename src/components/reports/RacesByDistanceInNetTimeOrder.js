@@ -59,15 +59,15 @@ class DistanceOrderedByFastest extends Component {
 
         return (
             <>
-                <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>By Distance and Time</h5>
+                <h5 style={{ textAlign: 'center', color: '#f3532b', fontFamily: 'comfortaa, arial, san-serif', fontWeight:"bold", backgroundColor: '#ebebeb', marginBottom:'20px'}}>All Races By Distance and Time</h5>
                 {this.state.racesByDistanceInState.map((currentDistanceInLoop) => {
                     console.log(currentDistanceInLoop)
                     return (<>
                         <Table striped bordered hover>
                             
-                            <thead style={{fontSize: '14px', fontWeight: 'bold', textAlign: 'center'}}>{currentDistanceInLoop.distanceName}</thead> 
-                                <tr>
-                                    <th>Date</th>
+                            <thead style={{fontSize: '14px', textAlign: 'center', backgroundColor: '#0593b3', color: '#f3532b', fontWeight:'bold', textShadow: '2px 2px 5px black'}}>{currentDistanceInLoop.distanceName}</thead> 
+                                <tr style={{backgroundColor: '#ebebeb', opacity: '.90'}}>
+                                    <th style={{borderTop: 'double', borderTopColor: 'black',borderWidth: '2px'}}>Date</th>
                                     <th>Race Name</th>
                                     <th>Location</th>
                                     <th>Net Time/Ascending</th>
@@ -75,7 +75,7 @@ class DistanceOrderedByFastest extends Component {
                             
                             {currentDistanceInLoop.races.map((currentRaceInLoop) => {
                                 return (<>
-                                    <tbody>
+                                    <tbody style={{backgroundColor: '#0593b3', color: '#ebebeb', opacity: '.90', fontWeight:'bold'}}>
                                         <tr>
                                             <td>{currentRaceInLoop.date}</td>
                                             <td>{currentRaceInLoop.name}</td>

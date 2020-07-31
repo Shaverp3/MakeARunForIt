@@ -49,16 +49,16 @@ class DivisionPlaced extends Component {
 
         return (
             <>
-                <h5 style={{ textAlign: 'center', color: '#2c3d55', fontFamily: 'comfortaa, arial, san-serif' }}>Division Placement in Top 3</h5>
+                <h5 style={{ textAlign: 'center', color: '#f3532b', fontFamily: 'comfortaa, arial, san-serif', fontWeight:"bold", backgroundColor: '#ebebeb', marginBottom:'20px'}}>Division Placement in Top 3</h5>
 
                 <Table striped bordered hover>
                     <thead style={{ textAlign: 'center' }}>
                         <tr>
-                            <th>Distance</th>
-                            <th>Date</th>
-                            <th>Race Name</th>
-                            <th>Location</th>
-                            <th>Division Place</th>
+                            <th style={{backgroundColor: '#ebebeb', opacity: '.80', color: '#0593b3'}}>Distance</th>
+                            <th style={{backgroundColor: '#ebebeb', opacity: '.80', color: '#0593b3'}}>Date</th>
+                            <th style={{backgroundColor: '#ebebeb', opacity: '.90', color: '#0593b3'}}>Race Name</th>
+                            <th style={{backgroundColor: '#ebebeb', opacity: '.90', color: '#0593b3'}}>Location</th>
+                            <th style={{backgroundColor: '#ebebeb', opacity: '.80', color: '#0593b3'}}>Division Place</th>
                         </tr>
                     </thead>
                     {this.state.top3InState.map((currentRaceInLoop) => {
@@ -66,11 +66,11 @@ class DivisionPlaced extends Component {
                             <>
                                 <tbody>
                                     <tr style={{textAlign: 'center'}}>
-                                        <td>{currentRaceInLoop.distance.name}</td>
-                                        <td>{currentRaceInLoop.date}</td>
-                                        <td>{currentRaceInLoop.name}</td>
-                                        <td>{currentRaceInLoop.location}</td>
-                                        <td style={{backgroundColor: '#f3532b'}}>{currentRaceInLoop.ageGenderPlace}</td>
+                                        <td style={{backgroundColor: '#f3532b', color: '#ebebeb'}}>{currentRaceInLoop.distance.name}</td>
+                                        <td style={{ backgroundColor: '#ebebeb', color: '#0593b3' }}>{currentRaceInLoop.date}</td>
+                                        <td style={{ backgroundColor: '#ebebeb', color: '#0593b3' }}>{currentRaceInLoop.name}</td>
+                                        <td style={{ backgroundColor: '#ebebeb', color: '#0593b3' }}>{currentRaceInLoop.location}</td>
+                                        <td style={{backgroundColor: '#f3532b', color: '#ebebeb'}}>{currentRaceInLoop.ageGenderPlace}</td>
                                     </tr>
                                 </tbody>
                             </>)

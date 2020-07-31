@@ -12,6 +12,7 @@ body
     font-size: 14px;
     color: #999999;
     word-wrap:break-word;
+    background-image: url(./marathon.png);
 }
 
 p
@@ -31,7 +32,9 @@ ul
     text-transform: uppercase;
     text-align: center;
     padding: 0 0 200px;
+    background-image: url(./marathon.png);
 }
+
 
 /*.take-input {
   margin: 50px 0 0;

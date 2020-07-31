@@ -16,7 +16,7 @@ class NavBar extends Component {
     render() {
         return (
             <>
-                <Navbar style={{ backgroundColor: '#209dc9', width: '100vw' }}>
+                <Navbar style={{ backgroundColor: '#0593b3', width: '100vw' }}>
                     <Navbar.Brand style={{ color: '#f3532b', fontSize: '36px', fontWeight: 'bold', textShadow: '2px 2px 5px black' }} href="#home">Make A Run For It!</Navbar.Brand>
                     <Nav className="justify-content-end" activeKey="/home">
                         <Nav.Item style={{ color: '#ebebeb' }}>
